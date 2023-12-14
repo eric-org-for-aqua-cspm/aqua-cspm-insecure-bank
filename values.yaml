@@ -1,0 +1,67 @@
+# Default values for aqua-installation.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  tag: "2022.4.284"
+#  db: "11.16"
+#storageClassName: dev-cld-st01-storage-policy
+storageClassName: manual
+
+license: MUY2czRxUDZCcEV2QVRta2xMVHU5NDB1M0hxY1loR3pVb25kZE91alBzNXQ3Sm9HVnRCOWtRZi1OX0poQzYwMnhSY21nNElQU1dXdENabzNJbTF6S2lnSUhPZEIxR0YwY28tLV9pdkJzX1VfLTlQejRFMDZWMGR5Q1BWMnBFWDQ5c2ZvRTIzTlBIU2ZzSkxXU2IzU2Y1X2E4Mk8wUTUwS01SWFhJSXBsaTAySEticHVYOFVoS3d2cjBFOHB1RW4xOWJ1MVN1ZGF4UUZZXzA0bDNoaDQzbzh3b3VZVVlXQnNBTGRQOUdtLUJvN0owa21sWUI4S3dTSFpxVjJ4bWUwRkFoYlQ5MXhENzlja05qNlFpV3AzVUVUUVVoTE11T1FzQkwxVkFmTDB2YjMyVWJFdHBfbzFEdlJJbDZXVGhrSTY0Rnh6MWJXYjk2eWVfekY1Z2xqaGFCWm9sNl92ZGZqNV9rdnk1Z0N6UzJXUGM4cFo2NTdPTnpoS3h3TU5sdVgyUHExVktvV3lMY2dFVGZvWFRoT2p0OWI2aFp3WFdzMmxreWdzcHlzNnJhdTR3dDBJNHpGdXhYTmJOejRxYmZGeWlfOS1xM0pZX0hfRVZOTDZmaFpacWg0S3d1Y1RIREJfVE85UFBSZ3dvY1U2Z0VHMU9hWFhGeE4yM3hxcW9Ja3A5SENsYjk4SEJCRVpQenBocXFoSmlFYWFYLUNXaUxOSTJRXy1Uczdfc2xYREk4Uk9UYWhOSnFucEgzcVpaUE5QN0FBMGhFSXplNjJNZmwzUUN5WG55OFJlRXlxMkpyZzlRbWRocnltSGd5WkpQUEtUQ0pmeURKN0FqU2ZoeGtIVWViUExfLUJOUzJKLWJaRUZFZXRPaHEzYzFMSm5DWW8xdE9RbHo1UGt4Sk9zQmppSFdWeGRIYXJsekZSUHJlOGxSSzhPTEpfdzNOLWdSejU3NTc1NUNCb0FOenpPWHAzQVFxdUF4Z2ZNYTZQT1Z2WVJuM3RXSVpmVlpiREhxeTVyMFUwd1cwNU9EX0JOWHJpOUFFZDM4LXE2RGl5ZlJhLVhTNTZUZ2x4YnBSVWM0dE8zVWo0TDd2M2RwRC10b1g3NXJCV1NnRkNSUGFoanlhX1NJQk9ubkZxNWVTelZBWWd3eHpGamRERUZTOEliLWxBLVdxVW1XYW5wTFVXMU5BZm5EdjdJUTI3b01qeVY2NVBTN3hqUmRENTMzaHZna2dVaDQ0eTBpQVFVdlE9PQ==
+
+#Base 64 encoded
+aquapw:
+  admin: MDAwMEFiYyE=
+  db: cGFzc3dvcmQK
+  auditdb: cGFzc3dvcmQK
+
+artifactory:
+    url: 172.30.8.229:8082
+    repo: t
+    
+# 172.30.8.229:8081/t/database:6.0.21164
+# "2022.4.98" = postgres (PostgreSQL) 11.16
+#
+nginx:
+    imagetag: "2022.4.404"
+    bearertoken: "Bearer 6205f8d03dc3bc4a0a8cc7942cff44ff35d17284"
+
+web:
+  cybercenter: "172.30.9.201"
+  replicas: 1
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+    limits:
+      cpu: "1000m"
+      memory: "2Gi"
+
+gw:
+  replicas: 2
+  resources: # << change resource if required
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+    limits:
+      cpu: "1500m"
+      memory: "3Gi"
+
+db:
+  resources: # << change resource if required
+    requests:
+      cpu: "1000m"
+      memory: "1Gi"
+    limits:
+      cpu: "2000m"
+      memory: "2Gi"
+
+auditdb:
+  resources: # << change resource if required
+    requests:
+      cpu: "1000m"
+      memory: "1Gi"
+    limits:
+      cpu: "2000m"
+      memory: "2Gi"
